@@ -1,0 +1,93 @@
+/* Body Styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #ff9a9e, #fad0c4);
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Floating Animation for the Container */
+.container {
+    text-align: center;
+    animation: float 3s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Sorry Text Animation */
+.sorry-text {
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+    animation: heartbeat 2s infinite alternate, glow 2s infinite alternate;
+}
+
+/* Heartbeat Effect */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Glow Effect */
+@keyframes glow {
+    0% { text-shadow: 0 0 10px white; }
+    100% { text-shadow: 0 0 20px white; }
+}
+
+/* Typing Effect for Messages */
+.message, .message2 {
+    font-size: 22px;
+    color: white;
+    margin-top: 10px;
+    opacity: 0;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0; /* Fix for missing text */
+}
+
+/* Animation for the first message */
+.message {
+    animation: fadeIn 1s ease-in-out forwards 1s, typing 3s steps(30, end) 1.5s forwards;
+}
+
+/* Animation for the second message */
+.message2 {
+    animation: fadeIn 1s ease-in-out forwards 3s, typing 3s steps(30, end) 3.5s forwards;
+}
+
+/* Typing Effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Fade In Effect */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ---- Falling Flowers Styling ---- */
+.flower {
+    position: absolute;
+    top: -10%;
+    font-size: 30px;
+    opacity: 0.9;
+    animation: fall linear infinite;
+}
+
+/* Falling Animation */
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
